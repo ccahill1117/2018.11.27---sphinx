@@ -1,0 +1,15 @@
+
+<h1><%= @description %></h1>
+
+<h3>Sphinx Riddles</h3>
+
+<h1><%= @riddle_to_user.riddles[@riddle_to_user.index] %></h1>
+
+<form action="/output">
+  <div class="form-group">
+    <label for="user answer">Your answer here...</label>
+    <input id="user_answer" type="text" name="user_answer">
+  </div>
+
+  <button type="submit" class="btn-info">Submit answer</button>
+</form>

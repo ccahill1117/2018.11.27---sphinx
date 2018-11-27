@@ -1,9 +1,10 @@
 require ('rspec')
 require ('pry')
 require ('Riddle')
+require ('capybara')
 
 
-describe('Riddle') do 
+describe('Riddle') do
 
   it('tests a method for Riddle') do
 
@@ -14,4 +15,3 @@ describe('Riddle') do
   end
 
 end
-
