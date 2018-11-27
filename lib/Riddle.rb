@@ -2,6 +2,8 @@ class Riddle
   attr_accessor(:index, :riddles, :answers, :clues)
 
   def initialize
+    @@riddle_index
+    @@attempts
     @index = rand(4)
     @answers = ["flower", "leg", "candle", "dog"]
     @riddles = ["Close to the words of life stay I,
