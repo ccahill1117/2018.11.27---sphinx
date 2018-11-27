@@ -1,8 +1,9 @@
 class Riddle
-  attr_accessor(:index, :riddles, :answers)
+  attr_accessor(:index, :riddles, :answers, :clues)
 
   def initialize
     @index = rand(4)
+    @answers = ["flower", "leg", "candle", "dog"]
     @riddles = ["Close to the words of life stay I,
       But I wither, wane, and grow dry.","I do not breathe, but I run and jump.
         I do not eat, but I swim and stretch.
@@ -11,7 +12,7 @@ class Riddle
               I do not see, but you see me every day.","Always wax, yet always wane: I melt, succumbéd to the flame.
                 Lighting darkness, with fate unblest, I soon devolve to shapeless mess.","To you, rude would I never be,
                 Though I flag my tongue for all to see."]
-    @answers = ["flower", "leg", "candle", "dog"]
+    @clues = ["you put one of these in a vase","these come in handy for cross country runners","thomas edison helped us not need many of these anymore","some would call one of these el mejor amigo del hombre"]
   end
 
   # def find_answer(riddle_index_used_in_view)

@@ -1,17 +1,25 @@
 require ('rspec')
+require ('capybara/rspec')
 require ('pry')
-require ('Riddle')
+require ('./app')
 require ('capybara')
+require ('./lib/Riddle')
+Capybara.app = Sinatra::Application
+set(:show_exceptions, false)
 
 
-describe('Riddle') do
-
-  it('tests a method for Riddle') do
-
-    dummy = Riddle.new()
-
-    expect(dummy.method()).to(eq(expected result))
-
+describe('the sphinx riddle', {:type => :feature}) do
+  testriddle = Riddle.new
+  it('checks user answer with provided riddle') do
+    visit('/')
+    fill_in('user_answer', :with => '5')
+    click_button('Submit answer')
+    expect(page).to have_content('Nope, wrong, you suck!')
   end
-
+  it('checks user answer with provided riddle') do
+    visit('/')
+    fill_in('user_answer', :with => testriddle.answers[testriddle.index])
+    click_button('Submit answer')
+    expect(page).to have_content(testriddle.answers[testriddle.index])
+  end
 end

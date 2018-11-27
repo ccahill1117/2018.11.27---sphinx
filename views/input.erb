@@ -3,9 +3,9 @@
 
 <h3>Sphinx Riddles</h3>
 
-<h1><%= @riddle_to_user.riddles[@riddle_to_user.index] %></h1>
+<h1><%= @riddle_to_user.riddles[@@riddle_index] %></h1>
 
-<form action="/output">
+<form action="/output" method="post">
   <div class="form-group">
     <label for="user answer">Your answer here...</label>
     <input id="user_answer" type="text" name="user_answer">
@@ -13,3 +13,16 @@
 
   <button type="submit" class="btn-info">Submit answer</button>
 </form>
+
+<% if @result %>
+  <p> <%= @result %> </p>
+<% end %>
+
+
+<% if @hint %>
+<p> <%= @hint %> </p>
+<% end %>
+
+<% if (@@attempts > 0)  %>
+<p> ATTEMPTS <%= @@attempts %> </p>
+<% end %>
